@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "HienThiPhongBan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BT_Buoi_05.ViewModel.PhongBanModel
+<h2>Hiển thị phòng ban</h2>
+<p>
+    Ma Phong: @Model.PhongBan.MaPhong
+</p>
+<p>
+    Ten Phong: @Model.PhongBan.TenPhong
+</p>
+<table class="table table-striped border">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Mã Nhân Viên
+            </th>
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                Giới Tính
+            </th>
+            <th>
+                Tỉnh/Thành Phố
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var n in Model.NhanVien)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(abc => n.MaNv)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.Tinh)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { })
+                @Html.ActionLink("Details", "Details", new { })
+                @Html.ActionLink("Delete", "Delete", new { })
+            </td>
+        </tr>
+    }
+</table>

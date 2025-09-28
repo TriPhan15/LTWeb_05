@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "HienThiPhongBan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<BT_Buoi_05.Models.PhongBan>
+<h2>Hiển Thị Phòng Ban</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới Phòng Ban", "AddNew_PhongBan")
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Ma Phong
+            </th>
+            <th>
+                Ten Phong
+            </th>
+        </tr>
+    </thead>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(abc => n.MaPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(sdf => n.TenPhong)
+            </td>
+            <td>
+                @Html.ActionLink("Xem chi tiết", "Detail_PhongBan", new { id = n.MaPhong })
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa phòng ban", "Edit_PhongBan", new { id = n.MaPhong })
+            </td>
+            <td>
+                @Html.ActionLink("Xoá phòng ban", "Delete_PhongBan", new { id = n.MaPhong })
+            </td>
+        </tr>
+    }
+</table>

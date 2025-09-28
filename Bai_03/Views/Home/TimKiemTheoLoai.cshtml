@@ -1,0 +1,66 @@
+﻿
+
+@model Bai_03.ViewModel.SanPham_Loai_Model
+@{
+ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Tim Kiem Theo Loai</h2>
+
+<form method="post" action="~/Home/TimKiemTheoLoai">
+    <div class="form-group">
+        <label for="ma">Chọn Loại Sản Phẩm</label>
+        <select name="ma" class="form-control" onchange="this.form.submit()">
+            <option value="0" @(Model.SelectedMaLoai == 0 ? "selected" : "")>-- Tất cả --</option>
+            @foreach (var loai in Model.loai)
+            {
+                <option value="@loai.maloai" @(loai.maloai == Model.SelectedMaLoai ? "selected" : "")>
+                    @loai.tenloai
+                </option>
+            }
+        </select>
+    </div>
+</form>
+<table class="table table-striped border">
+    <thead>
+        <tr>
+            <th>
+                Mã Sản Phẩm
+            </th>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Đường Dẫn
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Mô Tả
+            </th>
+        </tr>
+    </thead>
+    @foreach (var m in Model.sanPham)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(ab => m.masp)
+            </td>
+            <td>
+                @Html.DisplayFor(n => m.tensp)
+            </td>
+            <td>
+                @Html.DisplayFor(ab => m.duongdan)
+            </td>
+            <td>
+                @Html.DisplayFor(aa => m.gia)
+            </td>
+            <td>
+                @Html.DisplayFor(bb => m.mota)
+            </td>
+        </tr>
+
+    }
+</table>
+

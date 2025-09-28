@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ShowLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+@model IEnumerable<Bai_03.Models.Loai>
+<h2>Danh Sách Loại </h2>
+<table class="table table-striped border">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Mã loại
+            </th>
+            <th>
+                Tên loại
+            </th>
+        </tr>
+    </thead>
+    @foreach (var n in Model) { 
+        <tr>
+            <td>
+                @Html.DisplayFor(abc=>n.maloai)
+            </td>
+            <td>
+                @Html.DisplayFor(m=>n.tenloai)
+            </td>
+        </tr>
+    }
+</table>
+

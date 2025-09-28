@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Bai_03.Models.SanPham>
+
+@{
+    ViewBag.Title = "Tìm Kiếm Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tìm Kiếm Sản Phẩm</h2>
+
+<form method="post" action="~/Home/TimKiemSP">
+    <label for="ten">Tên Sản Phẩm</label>
+    <input type="text" name="ten" />
+    <input type="submit" value="Tìm Kiếm" class="btn btn-primary" />
+</form>
+
+<h3>Kết Quả Tìm Kiếm</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Đường Dẫn</th>
+            <th>Giá</th>
+            <th>Mô Tả</th>
+            <th>Mã Loại</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(ab => m.masp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(n => m.tensp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(ab => m.duongdan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(aa => m.gia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(bb => m.mota)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(cc=>m.maloai)
+                    </td>
+                </tr>
+
+            }
+        }
+        else
+        {
+            <tr><td colspan="6">Không có sản phẩm nào được tìm thấy.</td></tr>
+        }
+    </tbody>
+</table>

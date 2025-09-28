@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "ShowSp_Loai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bai_03.ViewModel.SanPham_Loai_Model
+<h2>Sản Phẩm - Loại</h2>
+<div class="row row-cols-1 row-cols-2 g-4" style="margin:10px;padding:10px;text-align:center;align-content:center">
+    <div class="col-3 cd" >
+        @foreach (var n in Model.loai)
+        {
+           <p>@Html.ActionLink(@n.tenloai, "ShowSp_Loai", new { ma = n.maloai }, new { @class= "ab"})</p>
+        }
+    </div>
+    <div class="col-9 cd">
+        <table class=" table table-striped border">
+            <thead>
+                <tr>
+                    <th>
+                        Mã Sản Phẩm
+                    </th>
+                    <th>
+                        Tên Sản Phẩm
+                    </th>
+                    <th>
+                        Đường Dẫn
+                    </th>
+                    <th>
+                        Giá
+                    </th>
+                    <th>
+                        Mô Tả
+                    </th>
+                    <th>
+                        Mã Loại
+                    </th>
+                </tr>
+            </thead>
+            @foreach(var n in Model.sanPham)
+            {
+                <tr>
+                    <td>
+                        @n.masp
+                    </td>
+                    <td>@n.tensp</td>
+                    <td>@n.duongdan</td>
+                    <td>@n.gia</td>
+                    <td>@n.mota</td>
+                    <td>@n.maloai</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

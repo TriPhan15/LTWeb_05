@@ -1,0 +1,8 @@
+﻿
+@model BT_Buoi_05.Models.PhongBan
+<form method="post" action="~/Home/Edit_PhongBan">
+    <input type="number" name="Id" value="@Model.MaPhong" placeholder="Nhập mã phòng" readonly />
+    <input type="text" name="Name" value="@Model.TenPhong" placeholder="Nhập tên phòng" />
+    <button type="submit" class="btn btn-success">Đồng ý</button>
+     <div>@ViewBag.message</div>
+</form>

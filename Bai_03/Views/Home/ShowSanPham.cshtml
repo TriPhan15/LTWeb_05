@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ShowSanPham";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Bai_03.Models.SanPham>
+<h2>Hiển Thị Sản Phẩm</h2>
+<table class="table table-striped border">
+    <thead>
+        <tr>
+            <th>
+                Mã Sản Phẩm
+            </th>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Đường Dẫn
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Mô Tả
+            </th>
+        </tr>
+    </thead>
+    @foreach(var m in Model)
+        {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(ab=>m.masp)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(n=>m.tensp)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(ab=>m.duongdan)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(aa=>m.gia)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(bb=>m.mota)
+                  </td>
+              </tr>  
+        }
+</table>
+

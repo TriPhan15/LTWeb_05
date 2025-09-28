@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "AddNew_PhongBan";
+}
+
+<h2>AddNew_PhongBan</h2>
+<form method="post" action="~/Home/AddNew_PhongBan">
+    <label>
+        Nhap ma phong ban
+    </label>
+    <input type="number" name="id" />
+    <label>
+        Nhap ten phong
+    </label>
+    <input type="text" name="name" />
+    <input type="submit" />Nhap
+    @ViewBag.message
+</form>

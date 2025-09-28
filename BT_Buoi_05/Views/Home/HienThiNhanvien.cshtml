@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "HienThiNhanvien";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<BT_Buoi_05.Models.Employee>
+<h2>Danh Sách Nhân Viên</h2>
+<p>
+    @Html.ActionLink("Thêm mới nhân viên", "Create");
+</p>
+<table class="table table-striped border">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Mã Nhân Viên
+            </th>
+            <th>
+                Tên Nhân Viên
+            </th>
+            <th>
+                Giới Tính
+            </th>
+            <th>
+                Tỉnh/Thành Phố
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(abc => n.MaNv)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(c => n.Tinh)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { })
+                @Html.ActionLink("Details", "Details", new { })
+                @Html.ActionLink("Delete", "Delete", new { })
+            </td>
+        </tr>
+    }
+</table>
